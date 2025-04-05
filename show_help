@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#works only for multipurpouse scripts that uses options
+
+show_help() {
+    cat << EOF
+Usage: $(basename "$0") [OPTIONS]
+
+Options:
+  -h, --help        Show this help message and exit
+  -f, --file FILE   Specify the file to process
+  -v, --verbose     Enable verbose mode
+
+Example:
+  $(basename "$0") -f data.txt --verbose
+
+EOF
+}
+
+# Parse args
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -h|--help)
+            show_help
+            exit 0
+            ;;
+        -f|--file)
+            FILE="$2"
+            shift 2
+            ;;
+        -v|--verbose)
+            VERBOSE=true
+            shift
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Use --help for usage info"
+            exit 1
+            ;;
+    esac
+done
