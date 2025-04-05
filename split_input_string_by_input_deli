@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+#author: Todor Milkote
+#owner: XXX
+#license: XXX
+
+#Split a String with a Delimiter
+#changelog: XXX
+
+# Usage: ./split_string.sh "string_to_split" "delimiter"
+
+# Check if two arguments are provided
+if [ $# -ne 2 ]; then
+  echo "Usage: $0 \"string_to_split\" \"delimiter\""
+  exit 1
+fi
+
+# Assign arguments to variables
+input_string=$1
+delimiter=$2
+
+# Split the string into an array using the delimiter
+IFS="$delimiter" read -ra parts <<< "$input_string"
+
+# Process and print each part
+echo "Split parts:"
+for part in "${parts[@]}"; do
+  echo "$part"
+done
