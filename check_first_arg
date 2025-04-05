@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+#author: Todor Milkote
+#owner: XXX
+#license: XXX
+
+#Check first argument
+#changelog: XXX
+
 #Check for $1
 if [ -z "$1" ]; then
     echo "There needs to be a $1 ./check_first_arg $1"

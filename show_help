@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
 
+#author: Todor Milkote
+#owner: XXX
+#license: XXX
+
+#show help message on script exec
+#changelog: XXX
+
 #works only for multipurpouse scripts that uses options
 
 show_help() {
